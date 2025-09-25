@@ -1,0 +1,23 @@
+{
+    "name": "sjonatas/oepn-php-api",
+    "description": "a PHP abstraction for open api to build api collections from php attributes",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sjonatas\\OepnPhpApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sjonatas"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
