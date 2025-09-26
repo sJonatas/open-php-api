@@ -4,16 +4,6 @@ namespace Sjonatas\OepnPhpApi;
 
 use Sjonatas\OepnPhpApi\Attributes\Path;
 
-class Features {
-    public $name;
-
-    #[\Sjonatas\OepnPhpApi\Attributes\Path(path: 'TestPath')]
-    public function main(): bool|string
-    {
-        return true;
-    }
-}
-
 class OpenPHP
 {
     protected string $openApiLicense;
@@ -46,13 +36,13 @@ class OpenPHP
 
     public function buildPaths()
     {
-        $paths = new \ReflectionMethod(Features::class, 'main');
+        //$paths = new \ReflectionMethod(Features::class, 'main');
 
         //var_dump($paths->getAttributes());
-        var_dump($paths->getReturnType()->getName());
-        die;
-        foreach ($paths->getAttributes() as $attribute) {
-            var_dump($attribute->getArguments());
-        }
+        //var_dump($paths->getReturnType()->getName());
+        //die;
+        //foreach ($paths->getAttributes() as $attribute) {
+        //    var_dump($attribute->getArguments());
+        //}
     }
 }
