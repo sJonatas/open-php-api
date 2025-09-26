@@ -1,36 +1,22 @@
 <?php
 
+namespace Sjonatas\OepnPhpApi;
+
 #[Attribute]
 class Server
 {
-    protected string $url;
-    protected string $description;
-    protected array $variables;
+    public function __construct(
+        public readonly string $url,
+        public readonly string $description,
+        public readonly array $variables
+    ) {}
 
-    private function __construct(string $url, string $description, array $variables)
+    public static function fromArray(array $data): static
     {
-        $this->url = $url;
-        $this->description = $description;
-        $this->variables = $variables;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    public function getVariables()
-    {
-        return $this->variables;
-    }
-
-    public static function make(string $url, string $description = null, array $variables = null)
-    {
-        return static::__construct($url, $description, $variables);
+        return new Server(
+            $data['url'],
+            $data['description'],
+            $data['variables']
+        );
     }
 }

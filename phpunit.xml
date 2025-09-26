@@ -1,0 +1,32 @@
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    verbose="true"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="memory_limit" value="-1"/>
+        <ini name="log_errors_max_len" value="0"/>
+        <ini name="zend.assertions" value="1"/>
+        <ini name="assert.exception" value="1"/>
+        <ini name="xdebug.show_exception_trace" value="0"/>
+    </php>
+    <testsuites>
+        <testsuite name="unit">
+            <directory phpVersion="8.1" phpVersionOperator=">=">tests/unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage
+        cacheDirectory="/cache-coverage"
+          includeUncoveredFiles="true"
+          processUncoveredFiles="true"
+          pathCoverage="true"
+          ignoreDeprecatedCodeUnits="true"
+          disableCodeCoverageIgnore="true">
+
+            <include>
+                <directory suffix=".php">src</directory>
+            </include>
+    </coverage>
+</phpunit>

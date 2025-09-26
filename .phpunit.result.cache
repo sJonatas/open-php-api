@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ServerDtoTest::test_can_create_server_from_array":3},"times":{"ServerDtoTest::test_can_create_server":0.011,"ServerDtoTest::test_can_create_server_from_array":0.017}}

@@ -10,8 +10,10 @@ enum ParameterStyle: string
     public function fromParameterMethod(ParameterMethodOptions $option): self
     {
         return match($option->value) {
-            ParameterMethodOptions::Query->value || ParameterMethodOptions::Header->value => static::Form,
-            ParameterMethodOptions::
+            ParameterMethodOptions::Query->value => static::Form,
+            ParameterMethodOptions::Path->value => static::Simple,
+            ParameterMethodOptions::Header->value => static::Simple,
+            ParameterMethodOptions::Cookie->value => static::Form,
         };
     }
 }

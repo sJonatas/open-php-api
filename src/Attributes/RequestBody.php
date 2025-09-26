@@ -5,9 +5,9 @@ namespace Attributes;
 use Attribute;
 
 #[Attribute]
-class RequestBody: string
+class RequestBody
 {
     protected string $description;
-    protected MediaTypeObject $content;
+    protected  $content;//MediaTypeObject
 
 }

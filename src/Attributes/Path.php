@@ -1,13 +1,14 @@
 <?php
 
-namespace Attributes;
+namespace Sjonatas\OepnPhpApi\Attributes;
 
 use Attribute;
 
-#[Attribute]
+#[Attribute(Attribute::TARGET_FUNCTION)]
 class Path
 {
-    protected $path;
+    public $function;
+    public $path;
     protected $summary;
     protected $description;
 }
